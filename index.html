@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>\u0627\u0633\u062a\u0631\u0627\u062a\u064a\u062c\u064a\u0629 \u0642\u0646\u0627\u0629 \u0627\u0644\u0623\u0637\u0641\u0627\u0644 | YouTube Growth Blueprint</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sun: #FFD93D;
+    --coral: #FF6B6B;
+    --mint: #6BCB77;
+    --sky: #4D96FF;
+    --purple: #C77DFF;
+    --dark: #1A1A2E;
+    --dark2: #16213E;
+    --card: #0F3460;
+    --text: #E8F4FD;
+    --muted: #8BAAB8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* Animated BG */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(ellipse at 20% 20%, rgba(77,150,255,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(199,125,255,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(255,107,107,0.05) 0%, transparent 60%);
+    z-index: -1;
+    animation: bgShift 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes bgShift {
+    0% { transform: translate(0,0) rotate(0deg); }
+    100% { transform: translate(30px,20px) rotate(3deg); }
+  }
+
+  /* HEADER */
+  .hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+    position: relative;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,107,107,0.15);
+    border: 1px solid rgba(255,107,107,0.4);
+    border-radius: 50px;
+    padding: 6px 20px;
+    font-size: 13px;
+    color: var(--coral);
+    margin-bottom: 24px;
+    animation: fadeDown 0.6s ease forwards;
+  }
+
+  .hero-badge::before { content: '\ud83c\udfac'; }
+
+  .hero h1 {
+    font-family: 'Tajawal', sans-serif;
+    font-size: clamp(32px, 6vw, 60px);
+    font-weight: 900;
+    line-height: 1.2;
+    animation: fadeDown 0.7s ease forwards;
+  }
+
+  .hero h1 .highlight-yellow { color: var(--sun); }
+  .hero h1 .highlight-coral { color: var(--coral); }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    margin-top: 16px;
+    max-width: 600px;
+    margin-inline: auto;
+    animation: fadeDown 0.8s ease forwards;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    animation: fadeUp 1s ease forwards;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--sun);
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* MAIN GRID */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 48px;
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .section-icon {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  /* CARDS */
+  .card {
+    background: rgba(15,52,96,0.6);
+    border: 1px solid rgba(77,150,255,0.15);
+    border-radius: 16px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(77,150,255,0.4);
+    box-shadow: 0 12px 40px rgba(77,150,255,0.1);
+  }
+
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+
+  /* POSITIONING */
+  .position-card {
+    background: linear-gradient(135deg, rgba(255,217,61,0.1), rgba(255,107,107,0.1));
+    border-color: rgba(255,217,61,0.25);
+    padding: 32px;
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  .position-card .big-emoji { font-size: 56px; margin-bottom: 16px; display: block; }
+
+  .position-card h2 {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--sun);
+    margin-bottom: 12px;
+  }
+
+  .position-card p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  /* PILLAR CARDS */
+  .pillar-card {
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pillar-card::after {
+    content: '';
+    position: absolute;
+    top: -20px; right: -20px;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    opacity: 0.15;
+  }
+
+  .pillar-1 { background: rgba(255,107,107,0.12); border: 1px solid rgba(255,107,107,0.3); }
+  .pillar-1::after { background: var(--coral); }
+
+  .pillar-2 { background: rgba(77,150,255,0.12); border: 1px solid rgba(77,150,255,0.3); }
+  .pillar-2::after { background: var(--sky); }
+
+  .pillar-3 { background: rgba(107,203,119,0.12); border: 1px solid rgba(107,203,119,0.3); }
+  .pillar-3::after { background: var(--mint); }
+
+  .pillar-4 { background: rgba(199,125,255,0.12); border: 1px solid rgba(199,125,255,0.3); }
+  .pillar-4::after { background: var(--purple); }
+
+  .pillar-emoji { font-size: 32px; margin-bottom: 12px; display: block; }
+  .pillar-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .pillar-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  .pillar-examples {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    background: rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* TIMELINE */
+  .timeline {
+    position: relative;
+    padding-right: 30px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    right: 10px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--sky), var(--purple), var(--mint));
+  }
+
+  .tl-item {
+    position: relative;
+    margin-bottom: 28px;
+    padding-right: 28px;
+  }
+
+  .tl-dot {
+    position: absolute;
+    right: -4px; top: 4px;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    border: 2px solid var(--dark);
+  }
+
+  .tl-phase {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .tl-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+  .tl-body { font-size: 13px; color: var(--muted); line-height: 1.8; }
+
+  .tl-actions {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .tl-action {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .tl-action::before { content: '\u2192'; color: var(--sky); flex-shrink: 0; margin-top: 1px; }
+
+  /* SCHEDULE */
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+  }
+
+  .day-label {
+    font-size: 11px;
+    color: var(--muted);
+    padding: 8px 4px;
+    font-weight: 600;
+  }
+
+  .day-cell {
+    border-radius: 10px;
+    padding: 12px 4px;
+    font-size: 11px;
+    font-weight: 600;
+    transition: transform 0.2s;
+    cursor: default;
+  }
+
+  .day-cell:hover { transform: scale(1.05); }
+  .day-off { background: rgba(255,255,255,0.04); color: var(--muted); }
+  .day-short { background: rgba(77,150,255,0.2); border: 1px solid rgba(77,150,255,0.3); color: var(--sky); }
+  .day-long { background: rgba(255,217,61,0.2); border: 1px solid rgba(255,217,61,0.3); color: var(--sun); }
+  .day-reel { background: rgba(255,107,107,0.2); border: 1px solid rgba(255,107,107,0.3); color: var(--coral); }
+
+  /* MONETIZATION */
+  .mono-card {
+    text-align: center;
+    padding: 24px 16px;
+  }
+
+  .mono-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+  .mono-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .mono-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .mono-badge {
+    margin-top: 12px;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  /* SEO TIPS */
+  .tip-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .tip-row:last-child { border-bottom: none; }
+
+  .tip-num {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: rgba(77,150,255,0.2);
+    color: var(--sky);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .tip-text { font-size: 14px; line-height: 1.7; }
+  .tip-text strong { color: var(--sun); }
+
+  /* AUDIENCE */
+  .audience-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .audience-card {
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .audience-primary {
+    background: linear-gradient(135deg, rgba(77,150,255,0.15), rgba(77,150,255,0.05));
+    border: 1px solid rgba(77,150,255,0.3);
+  }
+
+  .audience-secondary {
+    background: linear-gradient(135deg, rgba(107,203,119,0.15), rgba(107,203,119,0.05));
+    border: 1px solid rgba(107,203,119,0.3);
+  }
+
+  .audience-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    opacity: 0.7;
+  }
+
+  .audience-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+  .audience-list { list-style: none; }
+  .audience-list li {
+    font-size: 13px;
+    color: var(--muted);
+    padding: 5px 0;
+    display: flex;
+    gap: 8px;
+  }
+  .audience-list li::before { content: '\u2713'; color: var(--mint); }
+
+  /* PROGRESS BAR */
+  .progress-wrap { margin-top: 8px; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; }
+  .progress-label span:first-child { color: var(--muted); }
+  .progress-label span:last-child { font-weight: 700; }
+  .progress-bar { height: 6px; background: rgba(255,255,255,0.08); border-radius: 10px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 10px; animation: fillBar 1.5s ease forwards; }
+  @keyframes fillBar { from { width: 0; } }
+
+  /* KPI */
+  .kpi-card {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .kpi-val { font-size: 32px; font-weight: 900; }
+  .kpi-sub { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .audience-split { grid-template-columns: 1fr; }
+    .schedule-grid { grid-template-columns: repeat(4, 1fr); }
+    .hero-stats { gap: 24px; }
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(77,150,255,0.2), transparent);
+    margin: 48px 0;
+  }
+
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(255,217,61,0.08), rgba(255,107,107,0.08));
+    border: 1px solid rgba(255,217,61,0.2);
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 20px;
+  }
+
+  .highlight-box p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text);
+  }
+
+  .highlight-box strong { color: var(--sun); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">\u062e\u0637\u0629 \u0646\u0645\u0648 \u0627\u062d\u062a\u0631\u0627\u0641\u064a\u0629 \u0639\u0644\u0649 \u064a\u0648\u062a\u064a\u0648\u0628</div>
+  <h1>
+    \u0627\u0633\u062a\u0631\u0627\u062a\u064a\u062c\u064a\u0629 \u0642\u0646\u0627\u0629<br>
+    <span class="highlight-yellow">\u0627\u0644\u0623\u0637\u0641\u0627\u0644</span> 
+    <span class="highlight-coral"> \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u064a\u0629 \u0627\u0644\u0645\u0636\u062d\u0643\u0629</span>
+  </h1>
+  <p class="hero-sub">\u062e\u0627\u0631\u0637\u0629 \u0637\u0631\u064a\u0642 \u0645\u062a\u0643\u0627\u0645\u0644\u0629 \u0645\u0646 \u0627\u0644\u0635\u0641\u0631 \u062d\u062a\u0649 \u0661\u0660\u0660\u0660 \u0645\u0634\u062a\u0631\u0643 \u0648\u0627\u0644\u0631\u0628\u062d \u2014 \u0645\u0635\u0645\u0645\u0629 \u062e\u0635\u064a\u0635\u0627\u064b \u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0623\u0637\u0641\u0627\u0644 \u0641\u064a \u0627\u0644\u0639\u0627\u0644\u0645 \u0627\u0644\u0639\u0631\u0628\u064a</p>
+  
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">\u0669\u0660</div>
+      <div class="stat-label">\u064a\u0648\u0645\u0627\u064b \u0644\u0644\u0640 \u0661\u0660\u0660\u0660 \u0645\u0634\u062a\u0631\u0643</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">\u0664</div>
+      <div class="stat-label">\u0623\u0639\u0645\u062f\u0629 \u0645\u062d\u062a\u0648\u0649</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">\u0663\u00d7</div>
+      <div class="stat-label">\u062a\u0631\u062f\u062f \u0627\u0644\u0646\u0634\u0631 \u0623\u0633\u0628\u0648\u0639\u064a\u0627\u064b</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">\u0665+</div>
+      <div class="stat-label">\u0645\u0635\u0627\u062f\u0631 \u0631\u0628\u062d</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- POSITIONING -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-icon" style="background:rgba(255,217,61,0.15)">\ud83c\udfaf</div>
+      \u062a\u062d\u062f\u064a\u062f \u0645\u0648\u0642\u0639 \u0627\u0644\u0642\u0646\u0627\u0629
+    </div>
+
+    <div class="position-card card">
+      <span class="big-emoji">\ud83e\uddb8\u200d\u2642\ufe0f\ud83d\udd2c\ud83d\ude02</span>
+      <h2>\u0627\u0644\u0641\u0631\u0635\u0629 \u0627\u0644\u0630\u0647\u0628\u064a\u0629: "\u0627\u0644\u0639\u0644\u0645 \u0627\u0644\u0645\u0636\u062d\u0643"</h2>
+      <p>
+        \u0627\u0644\u062c\u0645\u0647\u0648\u0631 \u0627\u0644\u0639\u0631\u0628\u064a \u064a\u0641\u062a\u0642\u0631 \u0644\u0642\u0646\u0627\u0629 \u062a\u062c\u0645\u0639 <strong style="color:var(--sun)">\u0627\u0644\u062a\u0639\u0644\u064a\u0645 \u0627\u0644\u062d\u0642\u064a\u0642\u064a</strong> \u0645\u0639 <strong style="color:var(--coral)">\u0627\u0644\u062a\u0631\u0641\u064a\u0647 \u0627\u0644\u0645\u062c\u0646\u0648\u0646</strong> \u2014 \u0645\u0639\u0638\u0645 \u0627\u0644\u0642\u0646\u0648\u0627\u062a \u0625\u0645\u0627 \u062c\u0627\u062f\u0629 \u062c\u062f\u0627\u064b \u0648\u0645\u0645\u0644\u0644\u0629\u060c \u0623\u0648 \u0645\u0636\u062d\u0643\u0629 \u0628\u0644\u0627 \u0645\u062d\u062a\u0648\u0649. \u0623\u0646\u062a \u062a\u0645\u0644\u0623 \u0647\u0630\u0647 \u0627\u0644\u0641\u062c\u0648\u0629.
+      </p>
+    </div>
+
+    <div class="highlight-box">
+      <p>
+        <strong>\u0647\u0648\u064a\u062a\u0643 \u0641\u064a \u062c\u0645\u0644\u0629 \u0648\u0627\u062d\u062f\u0629:</strong> "\u0627\u0644\u0642\u0646\u0627\u0629 \u0627\u0644\u0644\u064a \u0628\u062a\u062e\u0644\u064a \u0623\u0637\u0641\u0627\u0644\u0643 \u064a\u062a\u0639\u0644\u0645\u0648\u0627 \u0648\u0647\u0645 \u0628\u064a\u0636\u062d\u0643\u0648\u0627" \u2014 
+        \u0645\u0632\u064a\u062c \u0628\u064a\u0646 <strong>\u0628\u064a\u0628\u064a \u0634\u0627\u0631\u0643 \u0627\u0644\u062c\u062f\u064a\u0629</strong> \u0648\u0637\u0627\u0642\u0629 <strong>\u064a\u0648\u062a\u064a\u0648\u0628 \u0643\u064a\u062f\u0632 \u0627\u0644\u0645\u0631\u062d\u0629</strong>\u060c 
+        \u0645\u0639 \u0637\u0627\u0628\u0639 \u0639\u0631\u0628\u064a \u0623\u0635\u064a\u0644. \u0645\u062d\u062a\u0648\u0649 \u064a\u0634\u0627\u0647\u062f\u0647 \u0627\u0644\u0637\u0641\u0644 \u0648\u064a\u0631\u062d\u0628 \u0628\u0647 \u0627\u0644\u0648\u0627\u0644\u062f.
+      </p>
+    </div>
+  </div>
+
+  <!-- AUDIENCE -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-icon" style="background:rgba(77,150,255,0.15)">\ud83d\udc65</div>
+      \u0627\u0644\u062c\u0645\u0647\u0648\u0631 \u0627\u0644\u0645\u0633\u062a\u0647\u062f\u0641
+    </div>
+    <div class="audience-split">
+      <div class="audience-card audience-primary">
+        <div class="audience-label" style="color:var(--sky)">\ud83c\udfaf \u0627\u0644\u062c\u0645\u0647\u0648\u0631 \u0627\u0644\u0623\u0633\u0627\u0633\u064a</div>
+        <div class="audience-title">\u0623\u0637\u0641\u0627\u0644 \u0664\u2013\u0661\u0660 \u0633\u0646\u0648\u0627\u062a</div>
+        <ul class="audience-list">
+          <li>\u064a\u062d\u0628\u0648\u0646 \u0627\u0644\u0623\u0644\u0648\u0627\u0646 \u0648\u0627\u0644\u062d\u0631\u0643\u0629 \u0648\u0627\u0644\u0645\u0624\u062b\u0631\u0627\u062a \u0627\u0644\u0635\u0648\u062a\u064a\u0629</li>
+          <li>\u064a\u0646\u062c\u0630\u0628\u0648\u0646 \u0644\u0644\u0634\u062e\u0635\u064a\u0627\u062a \u0627\u0644\u0643\u0631\u062a\u0648\u0646\u064a\u0629 \u0648\u0627\u0644\u062f\u0645\u0649</li>
+          <li>\u0645\u062f\u0629 \u062a\u0631\u0643\u064a\u0632: \u0665\u2013\u0661\u0662 \u062f\u0642\u064a\u0642\u0629</li>
+          <li>\u064a\u0643\u0631\u0631\u0648\u0646 \u0645\u0634\u0627\u0647\u062f\u0629 \u0645\u0627 \u064a\u0639\u062c\u0628\u0647\u0645</li>
+          <li>\u064a\u0637\u0644\u0628\u0648\u0646 \u0645\u0646 \u0627\u0644\u0623\u0647\u0644 \u0625\u0639\u0627\u062f\u0629 \u0627\u0644\u0641\u064a\u062f\u064a\u0648</li>
+        </ul>
+      </div>
+      <div class="audience-card audience-secondary">
+        <div class="audience-label" style="color:var(--mint)">\ud83d\udd11 \u0635\u0627\u0646\u0639 \u0627\u0644\u0642\u0631\u0627\u0631</div>
+        <div class="audience-title">\u0627\u0644\u0623\u0647\u0644 (\u0662\u0665\u2013\u0664\u0660 \u0633\u0646\u0629)</div>
+        <ul class="audience-list">
+          <li>\u064a\u0628\u062d\u062b\u0648\u0646 \u0639\u0646 \u0645\u062d\u062a\u0648\u0649 \u0645\u0641\u064a\u062f \u0644\u0623\u0637\u0641\u0627\u0644\u0647\u0645</li>
+          <li>\u064a\u0634\u062a\u0631\u0643\u0648\u0646 \u0641\u064a \u0627\u0644\u0642\u0646\u0648\u0627\u062a \u0627\u0644\u062a\u064a \u064a\u062b\u0642\u0648\u0646 \u0628\u0647\u0627</li>
+          <li>\u064a\u0634\u0627\u0631\u0643\u0648\u0646 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u062c\u064a\u062f \u0639\u0644\u0649 \u0648\u0627\u062a\u0633\u0627\u0628</li>
+          <li>\u064a\u0641\u0636\u0644\u0648\u0646 \u0627\u0644\u0644\u063a\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0641\u0635\u062d\u0649 \u0627\u0644\u0628\u0633\u064a\u0637\u0629</li>
+          <li>\u064a\u062f\u0639\u0645\u0648\u0646 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0639\u0631\u0628\u064a \u0627\u0644\u0623\u0635\u064a\u0644</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT PILLARS -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-icon" style="background:rgba(255,107,107,0.15)">\ud83c\udfdb\ufe0f</div>
+      \u0623\u0639\u0645\u062f\u0629 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0623\u0631\u0628\u0639\u0629
+    </div>
+    <div class="grid-2">
+      <div class="pillar-card pillar-1">
+        <span class="pillar-emoji">\ud83d\udd2c</span>
+        <div class="pillar-title" style="color:var(--coral)">\u0627\u0644\u0639\u0645\u0648\u062f \u0627\u0644\u0623\u0648\u0644 \u2014 \u0639\u0644\u0648\u0645 \u0645\u062c\u0646\u0648\u0646\u0629</div>
+        <div class="pillar-desc">\u062a\u062c\u0627\u0631\u0628 \u0639\u0644\u0645\u064a\u0629 \u0628\u0633\u064a\u0637\u0629 \u0641\u064a \u0627\u0644\u0645\u0646\u0632\u0644 \u0645\u0639 \u0631\u062f\u0648\u062f \u0641\u0639\u0644 \u0645\u0628\u0627\u0644\u063a \u0641\u064a\u0647\u0627 \u0648\u0643\u0648\u0645\u064a\u062f\u064a\u0629. \u0627\u0644\u062a\u0639\u0644\u064a\u0645 \u0645\u0646 \u062e\u0644\u0627\u0644 \u0627\u0644\u062f\u0647\u0634\u0629.</div>
+        <div class="pillar-examples">
+          <span class="tag">\u0628\u0631\u0627\u0643\u064a\u0646 \u0627\u0644\u062e\u0644 \u0648\u0627\u0644\u0635\u0648\u062f\u0627</span>
+          <span class="tag">\u0627\u0644\u0623\u0641\u0648\u0643\u0627\u062f\u0648 \u0627\u0644\u0639\u0627\u0626\u0645</span>
+          <span class="tag">\u0627\u0644\u062d\u0644\u064a\u0628 \u0627\u0644\u0645\u0644\u0648\u0646</span>
+          <span class="tag">\u062a\u062c\u0627\u0631\u0628 \u0627\u0644\u062c\u0627\u0630\u0628\u064a\u0629</span>
+        </div>
+      </div>
+
+      <div class="pillar-card pillar-2">
+        <span class="pillar-emoji">\ud83d\udd24</span>
+        <div class="pillar-title" style="color:var(--sky)">\u0627\u0644\u0639\u0645\u0648\u062f \u0627\u0644\u062b\u0627\u0646\u064a \u2014 \u0644\u063a\u0629 \u0648\u0642\u0635\u0635</div>
+        <div class="pillar-desc">\u0642\u0635\u0635 \u062a\u0641\u0627\u0639\u0644\u064a\u0629 \u0648\u0623\u063a\u0627\u0646\u064a \u062a\u0639\u0644\u064a\u0645\u064a\u0629 \u0648\u0623\u0644\u063a\u0627\u0632 \u0644\u063a\u0648\u064a\u0629 \u0645\u0639 \u0634\u062e\u0635\u064a\u0627\u062a \u0643\u0631\u062a\u0648\u0646\u064a\u0629 \u0645\u0636\u062d\u0643\u0629.</div>
+        <div class="pillar-examples">
+          <span class="tag">\u0623\u063a\u0627\u0646\u064a \u0627\u0644\u062d\u0631\u0648\u0641</span>
+          <span class="tag">\u0642\u0635\u0635 \u0645\u0627 \u0642\u0628\u0644 \u0627\u0644\u0646\u0648\u0645</span>
+          <span class="tag">\u0623\u0644\u063a\u0627\u0632 \u0630\u0643\u0627\u0621</span>
+          <span class="tag">\u0643\u0644\u0645\u0627\u062a \u062c\u062f\u064a\u062f\u0629 \u064a\u0648\u0645\u064a\u0627\u064b</span>
+        </div>
+      </div>
+
+      <div class="pillar-card pillar-3">
+        <span class="pillar-emoji">\ud83c\udf0d</span>
+        <div class="pillar-title" style="color:var(--mint)">\u0627\u0644\u0639\u0645\u0648\u062f \u0627\u0644\u062b\u0627\u0644\u062b \u2014 \u0623\u0633\u0626\u0644\u0629 \u0627\u0644\u0643\u0648\u0646</div>
+        <div class="pillar-desc">\u0625\u062c\u0627\u0628\u0629 \u0639\u0644\u0649 \u0623\u0633\u0626\u0644\u0629 \u0627\u0644\u0623\u0637\u0641\u0627\u0644 \u0627\u0644\u0643\u0628\u064a\u0631\u0629
